@@ -1,9 +1,9 @@
 {
-  "name": "create-alchemy-react",
-  "version": "1.8.1",
+  "name": "create-beekman-react",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alchemycodelab/create-alchemy-react"
+    "url": "https://github.com/beekman/create-beekman-react"
   },
   "bin": {
     "create-alchemy-react": "./index.js"
