@@ -91,11 +91,14 @@ function installDependencies(folder) {
     'postcss-nested',
     'postcss-simple-vars',
     'prop-types',
+    'react@experimental',
+    'react-dom@experimental',
     'style-loader',
     'url-loader',
     'webpack',
     'webpack-cli',
-    'webpack-dev-server'
+    'webpack-dev-server',
+
   ];
 
   const dependencies = [
