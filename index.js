@@ -151,28 +151,29 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            cacheDirectory: true
-          }
-        }
+            cacheDirectory: true,
+          },
+        },
       },
       {
-        test: /\\.css$/,
+        test: /\.css$/,
+        exclude: [/node_modules/, /public/],
         use: [
           {
-            loader: 'style-loader'
+            loader: 'style-loader',
           },
           {
             loader: 'css-loader',
             options: {
               sourceMap: true,
               modules: true,
-              importLoaders: 1
-            }
+              importLoaders: 1,
+            },
           },
           {
             loader: 'postcss-loader',
@@ -182,21 +183,54 @@ module.exports = {
                 require('postcss-import')(),
                 require('autoprefixer')(),
                 require('postcss-nested')(),
-                require('postcss-simple-vars')()
-              ]
-            }
-          }
-        ]
+                require('postcss-simple-vars')(),
+              ],
+            },
+          },
+        ],
       },
       {
-        test: /\\.(jpeg|jpg|png|svg)$/,
+        test: /\.css$/,
+        include: [path.resolve(__dirname, './public/rawStyles/')],
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: false,
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: [
+                require('postcss-import')(),
+                require('autoprefixer')(),
+                require('postcss-nested')(),
+                require('postcss-simple-vars')(),
+              ],
+            },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.(jpeg|jpg|png)$/,
         use: {
           loader: 'url-loader',
           options: { limit: 1000 },
         },
-      }
-    ]
-  }
+      },
+    ],
+  },
 };
 `.trimStart();
 
