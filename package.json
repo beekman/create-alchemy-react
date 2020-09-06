@@ -1,20 +1,20 @@
 {
-  "name": "create-beekman-react",
+  "name": "@beekman/create-beekman-react",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/beekman/create-beekman-react"
+    "url": "git+https://github.com/beekman/create-beekman-react.git"
   },
   "bin": {
-    "create-alchemy-react": "./index.js"
+    "create-alchemy-react": "index.js"
   },
-  "description": "",
+  "description": "**Don't** install this package. Use `npm init` in parent directory.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ben Beekman",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.2",
@@ -23,5 +23,9 @@
   },
   "devDependencies": {
     "eslint": "^5.16.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/beekman/create-beekman-react/issues"
+  },
+  "homepage": "https://github.com/beekman/create-beekman-react#readme"
 }
